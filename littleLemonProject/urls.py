@@ -19,9 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/', include('littleLemonApp.urls')),
-    # path('auth/', include('djoser.urls')),
-    # path('auth/', include('djoser.urls.authtoken')),
-    path('api/', include('djoser.urls')),
-    path('api/', include('djoser.urls.authtoken'))
+    # path('api/', include('littleLemonApp.urls')), # route api calls to littleLemonApp/urls.py
+    path('api/', include('djoser.urls')), # include the urls provided by djoser for user mgmt.
+    path('', include('djoser.urls.authtoken')),  # include the url provided by djoser for auth token 
+     
 ]
